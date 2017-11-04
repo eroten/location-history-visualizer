@@ -18,10 +18,9 @@
 
 		// Initialize the map
 		map = L.map( 'map' ).setView( [0,0], 2 );
-		L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: 'location-history-visualizer is open source and available <a href="https://github.com/theopolisme/location-history-visualizer">on GitHub</a>. Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors.',
-			maxZoom: 18,
-			minZoom: 2
+		L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+				attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+				maxZoom: 16
 		} ).addTo( map );
 
 		// Initialize the dropzone
@@ -210,7 +209,7 @@
 	}
 
 	/*
-        Default behavior for file upload (no chunking)	
+        Default behavior for file upload (no chunking)
 	*/
 
 	function parseKMLFile( file ) {
