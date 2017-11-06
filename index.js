@@ -105,22 +105,7 @@
 		// Update count
 		$( '#numberProcessed' ).text( numberProcessed.toLocaleString() );
 
-    $( '#launch' ).click( function () {
-      var $email = $( '#email' );
-      if ( $email.is( ':valid' ) ) {
-        $( this ).text( 'Launching... ' );
-        $.post( '/heatmap/submit-email.php', {
-          email: $email.val()
-        } )
-        .always( function () {
-          $( 'body' ).addClass( 'map-active' );
-          $done.fadeOut();
-          activateControls();
-        } );
-      } else {
-        alert( 'Please enter a valid email address to proceed.' );
-      }
-    } );
+    
 
 		function activateControls () {
 			var $tileLayer = $( '.leaflet-tile-pane' ),
