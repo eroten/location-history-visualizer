@@ -104,8 +104,7 @@
 
 		// Update count
 		$( '#numberProcessed' ).text( numberProcessed.toLocaleString() );
-
-    
+      activateControls();
 
 		function activateControls () {
 			var $tileLayer = $( '.leaflet-tile-pane' ),
