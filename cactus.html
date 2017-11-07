@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>A Leaflet map!</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <style>
+    #map{ height: 100% }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+
+  // initialize the map
+  var map = L.map('map').setView([19.5184, -99.6941], 5); //(coordinates to center the map)
+
+  // load a tile layer
+  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      attribution: 'Tiles by <a href="https://www.openstreetmap.org/#map=9/19.5184/-99.6941', //(map link)
+}).addTo(map);
+
+  // points
+  markers = [
+  {
+    "name": "Mexico City", //making the pop-up label appear)
+    "url": "https://www.openstreetmap.org/#map=8/19.482/-99.402",
+    "lat": 19.5184,
+    "lng": -99.6941
+  },
+];
+
+
+var cactusIcon = L.icon({
+    iconUrl:'cactus.png',
+    iconSize: [54,67],
+   });
+   L.marker([19.4326, -99.1332], {icon: cactusIcon}).addTo(map);
+
+  </script>
+  </body>
+</script>
+</html>
